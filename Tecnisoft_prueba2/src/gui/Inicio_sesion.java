@@ -136,7 +136,7 @@ public class Inicio_sesion extends javax.swing.JFrame {
         run = txtRun.getText();
         // validar
         if (run.equals("")) {
-            JOptionPane.showMessageDialog(this,"Campo Requerido");
+            JOptionPane.showMessageDialog(this, "Campo Requerido");
             txtRun.requestFocus();
         } else {
             if (run.equals("11-1")) {
@@ -147,7 +147,8 @@ public class Inicio_sesion extends javax.swing.JFrame {
                 } catch (SQLException ex) {
                     Logger.getLogger(Inicio_sesion.class.getName()).log(Level.SEVERE, null, ex);
                 }
-            } else {
+            }
+            if (run.equals("11-2")) {
                 try {
                     Usuario u = new Usuario(run);
                     v.setVisible(true);
@@ -155,8 +156,14 @@ public class Inicio_sesion extends javax.swing.JFrame {
                 } catch (SQLException ex) {
                     Logger.getLogger(Inicio_sesion.class.getName()).log(Level.SEVERE, null, ex);
                 }
+            } else {
+                if (!run.equals("11-1") && !run.equals("11-2")) {
+                    JOptionPane.showMessageDialog(this, "ERROR El Run " + run + " No Existe");
+                }
             }
         }
+
+
     }//GEN-LAST:event_btnIniciarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
