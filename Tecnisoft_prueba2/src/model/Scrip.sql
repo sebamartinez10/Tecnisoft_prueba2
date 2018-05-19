@@ -1,12 +1,16 @@
 CREATE DATABASE Prueba_2;
  
 USE Prueba_2;
- 
+
+drop database Prueba_2;
+
 CREATE TABLE tipoUsuario(
     id INT PRIMARY KEY AUTO_INCREMENT,
     tipo NVARCHAR(10)
 ); -- SELECT * FROM tipoUsuario;
- 
+
+INSERT INTO tipoUsuario VALUES(NULL,"Admin");
+
 CREATE TABLE tipoVivienda(
     id INT PRIMARY KEY AUTO_INCREMENT,
     tipo NVARCHAR(30)

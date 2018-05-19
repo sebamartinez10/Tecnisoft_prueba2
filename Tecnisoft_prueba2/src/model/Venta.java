@@ -1,14 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
-/**
- *
- * @author sebamartinez10
- */
+import java.util.logging.Logger;
+
 public class Venta {
-    
+
+    private int id;
+
+    public Venta(int id) {
+        this.id = id;
+    }
+
+    public Venta() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Venta{" + "id=" + id + '}';
+    }
+
 }

@@ -1,14 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package model;
 
-/**
- *
- * @author sebamartinez10
- */
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+
 public class Data {
+    private final Conexion con;
+    private String query;
+    private ResultSet rs;
+    
+    
+    public Data() throws ClassNotFoundException, SQLException {
+        con = new Conexion("localhost", "Prueba_2", "root", "123456");
+    }
+    
+    public void RegistrarUsuario(Usuario nuevo) throws SQLException{
+        query = ("INSERT INTO usuario VALUES('"+nuevo.getRun()+"','"+nuevo.getNombre()+"');");
+        con.ejecutar(query);
+     
+    }
+
+     
     
 }
