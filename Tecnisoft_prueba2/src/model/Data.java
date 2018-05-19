@@ -15,10 +15,15 @@ public class Data {
         con = new Conexion("localhost", "Prueba_2", "root", "123456");
     }
     
-    public void RegistrarUsuario(Usuario nuevo) throws SQLException{
-        query = ("INSERT INTO usuario VALUES('"+nuevo.getRun()+"','"+nuevo.getNombre()+"');");
+    public void registrarUsuarioAdmin(Usuario nuevo) throws SQLException{
+        query = ("INSERT INTO usuario VALUES(null,'"+nuevo.getRun()+"','"+nuevo.getNombre()+"','Admin');");
         con.ejecutar(query);
      
+    }
+    
+    public void registrarUsuarioVendedor(Usuario nuevo) throws SQLException{
+        query = ("INSERT INTO usuario VALUES(null,'"+nuevo.getRun()+"','"+nuevo.getNombre()+"','Vendedor');");
+        con.ejecutar(query);
     }
 
      
