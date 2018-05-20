@@ -4,6 +4,15 @@ USE Prueba_2;
 
 drop database Prueba_2;
 
+
+CREATE TABLE tipoUsuario(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tipo VARCHAR(30)
+); -- SELECT * FROM tipoUsuario;
+
+INSERT INTO tipoUsuario VALUES(NULL,'admin');
+INSERT INTO tipoUsuario VALUES(NULL,'vendedor');
+
 CREATE TABLE tipoVivienda(
     id INT PRIMARY KEY AUTO_INCREMENT,
     tipo NVARCHAR(30)
@@ -13,7 +22,8 @@ CREATE TABLE usuario(
     id INT AUTO_INCREMENT PRIMARY KEY,
     run NVARCHAR(30),
     nombre NVARCHAR(30),
-    tipoUsuario VARCHAR(20)
+    fk_tipoUsu INT,
+    FOREIGN KEY(fk_tipoUsu) REFERENCES tipoUsuario(id)
 ); -- SELECT * FROM usuario;
  
 

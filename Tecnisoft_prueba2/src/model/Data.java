@@ -16,16 +16,20 @@ public class Data {
     }
     
     public void registrarUsuarioAdmin(Usuario nuevo) throws SQLException{
-        query = ("INSERT INTO usuario VALUES(null,'"+nuevo.getRun()+"','"+nuevo.getNombre()+"','Admin');");
+        query = ("INSERT INTO usuario VALUES(null,'"+nuevo.getRun()+"','Administrador','1');");
         con.ejecutar(query);
      
     }
     
     public void registrarUsuarioVendedor(Usuario nuevo) throws SQLException{
-        query = ("INSERT INTO usuario VALUES(null,'"+nuevo.getRun()+"','"+nuevo.getNombre()+"','Vendedor');");
+        query = ("INSERT INTO usuario VALUES(null,'"+nuevo.getRun()+"','Vendedor','2');");
         con.ejecutar(query);
     }
 
      
+    public void proce(String rut) throws SQLException{
+        query = ("CALL validar('rut')");
+        con.ejecutar(query);
+    }
     
 }

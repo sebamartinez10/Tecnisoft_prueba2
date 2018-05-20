@@ -133,34 +133,28 @@ public class Inicio_sesion extends javax.swing.JFrame {
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
 
-        run = txtRun.getText();
-        // validar
-        if (run.equals("")) {
-            JOptionPane.showMessageDialog(this, "Campo Requerido");
-            txtRun.requestFocus();
-        } else {
+        try {
+            run = txtRun.getText();
+
+            // validar
+            if (run.equals("")) {
+                JOptionPane.showMessageDialog(this, "Campo Requerido");
+                txtRun.requestFocus();
+            }
+
             if (run.equals("11-1")) {
-                try {
-                    Usuario us = new Usuario(run);
-                    a.setVisible(true);
-                    d.registrarUsuarioAdmin(us);
-                } catch (SQLException ex) {
-                    Logger.getLogger(Inicio_sesion.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                Usuario u = new Usuario(run,nombre);
+                d.proce(run);  
+                d.registrarUsuarioAdmin(u);
+                a.setVisible(true);
+            }else{
+                Usuario u = new Usuario(run,nombre);
+                d.registrarUsuarioVendedor(u);
+                v.setVisible(true);
             }
-            if (run.equals("11-2")) {
-                try {
-                    Usuario u = new Usuario(run);
-                    v.setVisible(true);
-                    d.registrarUsuarioVendedor(u);
-                } catch (SQLException ex) {
-                    Logger.getLogger(Inicio_sesion.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            } else {
-                if (!run.equals("11-1") && !run.equals("11-2")) {
-                    JOptionPane.showMessageDialog(this, "ERROR El Run " + run + " No Existe");
-                }
-            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Inicio_sesion.class.getName()).log(Level.SEVERE, null, ex);
         }
 
 
