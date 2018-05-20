@@ -1,6 +1,6 @@
 CREATE DATABASE Prueba_2;
  
-USE Prueba_2;
+use Prueba_2;
 
 drop database Prueba_2;
 
@@ -12,6 +12,7 @@ CREATE TABLE tipoUsuario(
 
 INSERT INTO tipoUsuario VALUES(NULL,'admin');
 INSERT INTO tipoUsuario VALUES(NULL,'vendedor');
+--INSERT INTO tipoUsuario VALUES(NULL,'cacaca');--
 
 CREATE TABLE tipoVivienda(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -73,3 +74,4 @@ CREATE TABLE actividad(
     fecha DATE,
     
 );
+-- select * 
