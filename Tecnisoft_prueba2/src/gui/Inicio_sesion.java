@@ -10,8 +10,8 @@ import model.Usuario;
 public class Inicio_sesion extends javax.swing.JFrame {
 
     private Data d;
-    private String nombre;
-    private String run;
+    public Usuario nombreUsuario;
+    public String runUsuario;
     private Vendedor v;
     private Admin a;
 
@@ -134,24 +134,21 @@ public class Inicio_sesion extends javax.swing.JFrame {
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
 
         try {
-            run = txtRun.getText();
+            runUsuario = txtRun.getText();
 
             // validar
-            if (run.equals("")) {
+            if (runUsuario.equals("")) {
                 JOptionPane.showMessageDialog(this, "Campo Requerido");
                 txtRun.requestFocus();
             }
 
-            if (run.equals("11-1")) {
-                Usuario u = new Usuario(run,nombre);
-                d.proce(run);  
+            if (runUsuario.equals("11-1")) {
+                Usuario u = new Usuario(runUsuario);
+                 
                 d.registrarUsuarioAdmin(u);
                 a.setVisible(true);
-            }else{
-                Usuario u = new Usuario(run,nombre);
-                d.registrarUsuarioVendedor(u);
-                v.setVisible(true);
             }
+               
 
         } catch (SQLException ex) {
             Logger.getLogger(Inicio_sesion.class.getName()).log(Level.SEVERE, null, ex);

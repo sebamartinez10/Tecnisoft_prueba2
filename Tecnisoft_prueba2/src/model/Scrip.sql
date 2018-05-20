@@ -16,7 +16,11 @@ INSERT INTO tipoUsuario VALUES(NULL,'vendedor');
 CREATE TABLE tipoVivienda(
     id INT PRIMARY KEY AUTO_INCREMENT,
     tipo NVARCHAR(30)
-); -- SELECT * FROM tipoVivienda;
+); -- SELECT * FROM tipoVivienda;+
+
+INSERT INTO tipoVivienda VALUES(NULL,'Departamento');
+INSERT INTO tipoVivienda VALUES(NULL,'Casa');
+
  
 CREATE TABLE usuario(
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -62,4 +66,10 @@ CREATE TABLE restauracion(
     id INT AUTO_INCREMENT PRIMARY KEY,
     fecha DATE,
     hora TIME
+);
+
+CREATE TABLE actividad(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fecha DATE,
+    
 );

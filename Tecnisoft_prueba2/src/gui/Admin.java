@@ -1,27 +1,27 @@
-
 package gui;
-
 
 public class Admin extends javax.swing.JFrame {
 
-    
     public Admin() {
         initComponents();
         setLocationRelativeTo(null);
-        
+
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         btnModuloVivienda = new javax.swing.JButton();
         btnModuloRest = new javax.swing.JButton();
         btnModuloLog = new javax.swing.JButton();
         btnModuloCreacion = new javax.swing.JButton();
         btnModuloEst = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+
+        jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -29,18 +29,35 @@ public class Admin extends javax.swing.JFrame {
 
         btnModuloVivienda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/vivienda.png"))); // NOI18N
         btnModuloVivienda.setText("Modulo de Viviendas");
+        btnModuloVivienda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModuloViviendaActionPerformed(evt);
+            }
+        });
 
         btnModuloRest.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/restaurar.png"))); // NOI18N
         btnModuloRest.setText("Modulo de Restauracion");
+        btnModuloRest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModuloRestActionPerformed(evt);
+            }
+        });
 
         btnModuloLog.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/log.png"))); // NOI18N
         btnModuloLog.setText("Modulo LOG");
 
         btnModuloCreacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/creacion.png"))); // NOI18N
         btnModuloCreacion.setText("Modulo de Creacion");
+        btnModuloCreacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModuloCreacionActionPerformed(evt);
+            }
+        });
 
         btnModuloEst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/estadisticas.png"))); // NOI18N
         btnModuloEst.setText("Modulo de Estadisticas");
+
+        jLabel2.setText("Usuario Conectado:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -60,6 +77,10 @@ public class Admin extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnModuloEst, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(87, 87, 87))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -74,7 +95,8 @@ public class Admin extends javax.swing.JFrame {
                     .addComponent(btnModuloCreacion, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnModuloEst, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addComponent(jLabel2))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -96,7 +118,25 @@ public class Admin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
+    private void btnModuloViviendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModuloViviendaActionPerformed
+        ModViviendas m = new ModViviendas();
+        m.setVisible(true);
+    }//GEN-LAST:event_btnModuloViviendaActionPerformed
+
+    private void btnModuloCreacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModuloCreacionActionPerformed
+        ModCreacion m = new ModCreacion();
+
+        m.setVisible(true);
+
+
+    }//GEN-LAST:event_btnModuloCreacionActionPerformed
+
+    private void btnModuloRestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModuloRestActionPerformed
+        ModRestauracion m = new ModRestauracion();
+        m.setVisible(true);
+        
+    }//GEN-LAST:event_btnModuloRestActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -135,6 +175,8 @@ public class Admin extends javax.swing.JFrame {
     private javax.swing.JButton btnModuloLog;
     private javax.swing.JButton btnModuloRest;
     private javax.swing.JButton btnModuloVivienda;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

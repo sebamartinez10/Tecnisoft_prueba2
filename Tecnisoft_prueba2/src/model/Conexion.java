@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 
 public class Conexion {
     private Statement sen;
-    private ResultSet rs;
+    ResultSet rs;
     private Connection con; 
     
     public Conexion(

@@ -14,6 +14,9 @@ public class Usuario {
         this.run = run;
     }
 
+    public Usuario() {
+    }
+
     public String getRun() {
         return run;
     }

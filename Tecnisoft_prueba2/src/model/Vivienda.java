@@ -8,9 +8,9 @@ public class Vivienda {
     private int cant_piezas;
     private int cant_banos;
     private int precio;
-    private boolean nueva;
+    private int nueva;
 
-    public Vivienda(String num_rol, String direccion, int cant_piezas, int cant_banos, int precio, boolean nueva) {
+    public Vivienda(String num_rol, String direccion, int cant_piezas, int cant_banos, int precio, int nueva) {
         this.num_rol = num_rol;
         this.direccion = direccion;
         this.cant_piezas = cant_piezas;
@@ -62,13 +62,17 @@ public class Vivienda {
         this.precio = precio;
     }
 
-    public boolean isNueva() {
+    public int getNueva() {
         return nueva;
     }
 
-    public void setNueva(boolean nueva) {
+    public void setNueva(int nueva) {
         this.nueva = nueva;
     }
+    
+    
+
+   
 
     @Override
     public String toString() {
