@@ -38,9 +38,19 @@ public class Vendedor extends javax.swing.JFrame {
 
         btnVender.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/vender.png"))); // NOI18N
         btnVender.setText("vender Vivienda");
+        btnVender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVenderActionPerformed(evt);
+            }
+        });
 
         btnArrendar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/renta.png"))); // NOI18N
         btnArrendar.setText("Arrendar Vivienda");
+        btnArrendar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnArrendarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -95,6 +105,22 @@ public class Vendedor extends javax.swing.JFrame {
         m.setVisible(true);
         m.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnCrearClienteActionPerformed
+
+    private void btnVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderActionPerformed
+        ModVenderVivienda m = new ModVenderVivienda();
+        m.setVisible(true);
+        m.setLocationRelativeTo(null);
+        
+        
+    }//GEN-LAST:event_btnVenderActionPerformed
+
+    private void btnArrendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArrendarActionPerformed
+        ModVenderVivienda m = new ModVenderVivienda();
+        m.setVisible(true);
+        m.setLocationRelativeTo(null);
+        
+        
+    }//GEN-LAST:event_btnArrendarActionPerformed
 
     
     public static void main(String args[]) {
