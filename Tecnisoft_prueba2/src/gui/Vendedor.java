@@ -27,6 +27,11 @@ public class Vendedor extends javax.swing.JFrame {
 
         btnCrearCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cliente.png"))); // NOI18N
         btnCrearCliente.setText("Crear Cliente");
+        btnCrearCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearClienteActionPerformed(evt);
+            }
+        });
 
         btnCambiarAp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/apariencia.png"))); // NOI18N
         btnCambiarAp.setText("Cambiar Apariencia");
@@ -84,6 +89,12 @@ public class Vendedor extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCrearClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearClienteActionPerformed
+        ModCreaCliente m = new ModCreaCliente();
+        m.setVisible(true);
+        m.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnCrearClienteActionPerformed
 
     
     public static void main(String args[]) {
