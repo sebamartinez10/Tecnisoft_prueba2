@@ -1,6 +1,6 @@
 CREATE DATABASE Prueba_2;
  
-USE Prueba_2;
+use Prueba_2;
 
 /*
 drop database Prueba_2;
@@ -13,6 +13,7 @@ CREATE TABLE tipoUsuario(
 
 INSERT INTO tipoUsuario VALUES(NULL,'admin');
 INSERT INTO tipoUsuario VALUES(NULL,'vendedor');
+--INSERT INTO tipoUsuario VALUES(NULL,'cacaca');--
 
 CREATE TABLE tipoVivienda(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -72,7 +73,16 @@ CREATE TABLE restauracion(
     hora TIME
 );
 
+<<<<<<< HEAD
 -- CREATE TABLE actividad(
 --     id INT AUTO_INCREMENT PRIMARY KEY,
 --     fecha DATE,
 -- );
+=======
+CREATE TABLE actividad(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fecha DATE,
+    
+);
+-- select * 
+>>>>>>> 6f31759cd4cd1acb73d3252f1d2ebedf9bf8b133

@@ -58,6 +58,11 @@ public class FormVendedor extends javax.swing.JFrame {
 
         btnArrendar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/renta.png"))); // NOI18N
         btnArrendar.setText("Arrendar Vivienda");
+        btnArrendar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnArrendarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -107,6 +112,7 @@ public class FormVendedor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< HEAD:Tecnisoft_prueba2/src/gui/FormVendedor.java
     private void btnCambiarApActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarApActionPerformed
 
         Properties p = new Properties();
@@ -140,6 +146,31 @@ public class FormVendedor extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnVenderActionPerformed
 
+=======
+    private void btnCrearClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearClienteActionPerformed
+        ModCreaCliente m = new ModCreaCliente();
+        m.setVisible(true);
+        m.setLocationRelativeTo(null);
+    }//GEN-LAST:event_btnCrearClienteActionPerformed
+
+    private void btnVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderActionPerformed
+        ModVenderVivienda m = new ModVenderVivienda();
+        m.setVisible(true);
+        m.setLocationRelativeTo(null);
+        
+        
+    }//GEN-LAST:event_btnVenderActionPerformed
+
+    private void btnArrendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArrendarActionPerformed
+        ModVenderVivienda m = new ModVenderVivienda();
+        m.setVisible(true);
+        m.setLocationRelativeTo(null);
+        
+        
+    }//GEN-LAST:event_btnArrendarActionPerformed
+
+    
+>>>>>>> 6f31759cd4cd1acb73d3252f1d2ebedf9bf8b133:Tecnisoft_prueba2/src/gui/Vendedor.java
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
