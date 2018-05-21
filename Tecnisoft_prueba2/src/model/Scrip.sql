@@ -2,8 +2,9 @@ CREATE DATABASE Prueba_2;
  
 USE Prueba_2;
 
+/*
 drop database Prueba_2;
-
+*/
 
 CREATE TABLE tipoUsuario(
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -27,10 +28,11 @@ CREATE TABLE usuario(
     run NVARCHAR(30),
     nombre NVARCHAR(30),
     fk_tipoUsu INT,
-    FOREIGN KEY(fk_tipoUsu) REFERENCES tipoUsuario(id)
+    FOREIGN KEY(fk_tipoUsu) REFERENCES tipoUsuario(id) ON DELETE CASCADE
 ); -- SELECT * FROM usuario;
  
-
+INSERT INTO usuario VALUES(NULL,'11-1','Administrador',1);
+INSERT INTO usuario VALUES(NULL,'22-2','Vendedor',2);
  
 CREATE TABLE vivienda(
     num_rol NVARCHAR(30) PRIMARY KEY,
@@ -38,10 +40,12 @@ CREATE TABLE vivienda(
     cantPiezas INT,
     cantBaNos INT,
     fk_tipoVivienda INT,
-    FOREIGN KEY(fk_tipoVivienda) REFERENCES tipoVivienda(id),
+    FOREIGN KEY(fk_tipoVivienda) REFERENCES tipoVivienda(id) ON DELETE CASCADE,
     precio INT,
     nueva BOOLEAN
 ); -- SELECT * FROM vivienda;
+
+Insert into vivienda Values
  
  
 CREATE TABLE cliente(
@@ -55,9 +59,9 @@ CREATE TABLE venta(
     fk_vivienda NVARCHAR(30),
     fk_cliente NVARCHAR(30),
     fk_usuario INT,
-    FOREIGN KEY(fk_vivienda)REFERENCES vivienda(num_rol),
-    FOREIGN KEY(fk_cliente) REFERENCES cliente(run),
-    FOREIGN KEY(fk_usuario) REFERENCES usuario(id),
+    FOREIGN KEY(fk_vivienda)REFERENCES vivienda(num_rol) ON DELETE CASCADE,
+    FOREIGN KEY(fk_cliente) REFERENCES cliente(run) ON DELETE CASCADE,
+    FOREIGN KEY(fk_usuario) REFERENCES usuario(id) ON DELETE CASCADE,
     fecha DATE
    
 ); -- SELECT * FROM venta;
@@ -68,8 +72,7 @@ CREATE TABLE restauracion(
     hora TIME
 );
 
-CREATE TABLE actividad(
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    fecha DATE,
-    
-);
+-- CREATE TABLE actividad(
+--     id INT AUTO_INCREMENT PRIMARY KEY,
+--     fecha DATE,
+-- );

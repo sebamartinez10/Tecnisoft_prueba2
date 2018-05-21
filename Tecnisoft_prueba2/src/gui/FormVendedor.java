@@ -1,16 +1,23 @@
-
 package gui;
 
+import java.awt.Color;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.Icon;
+import javax.swing.JButton;
 
-public class Vendedor extends javax.swing.JFrame {
+public class FormVendedor extends javax.swing.JFrame {
 
-   
-    public Vendedor() {
+    public FormVendedor() {
         initComponents();
         setLocationRelativeTo(null);
     }
 
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -27,12 +34,27 @@ public class Vendedor extends javax.swing.JFrame {
 
         btnCrearCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cliente.png"))); // NOI18N
         btnCrearCliente.setText("Crear Cliente");
+        btnCrearCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearClienteActionPerformed(evt);
+            }
+        });
 
         btnCambiarAp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/apariencia.png"))); // NOI18N
         btnCambiarAp.setText("Cambiar Apariencia");
+        btnCambiarAp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCambiarApActionPerformed(evt);
+            }
+        });
 
         btnVender.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/vender.png"))); // NOI18N
         btnVender.setText("vender Vivienda");
+        btnVender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVenderActionPerformed(evt);
+            }
+        });
 
         btnArrendar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/renta.png"))); // NOI18N
         btnArrendar.setText("Arrendar Vivienda");
@@ -85,7 +107,39 @@ public class Vendedor extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
+    private void btnCambiarApActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarApActionPerformed
+
+        Properties p = new Properties();
+
+        JButton btnButton = new JButton();
+
+        btnButton.setBackground(Color.red);
+
+        p.put("colorBoton", btnButton);
+
+        try {
+            File archivo = new File("config.properties");
+            FileWriter fw = new FileWriter(archivo);
+            System.out.println(archivo);
+
+            fw.close();
+        } catch (IOException ex) {
+
+        }
+
+
+    }//GEN-LAST:event_btnCambiarApActionPerformed
+
+    private void btnCrearClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearClienteActionPerformed
+        ModCrearCliente cl = new ModCrearCliente();
+        cl.setVisible(true);
+        
+    }//GEN-LAST:event_btnCrearClienteActionPerformed
+
+    private void btnVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderActionPerformed
+        
+    }//GEN-LAST:event_btnVenderActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -100,20 +154,21 @@ public class Vendedor extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Vendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Vendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Vendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Vendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormVendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Vendedor().setVisible(true);
+                new FormVendedor().setVisible(true);
             }
         });
     }

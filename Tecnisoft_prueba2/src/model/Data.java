@@ -20,19 +20,25 @@ public class Data {
     
     public int validarUsuario(String run) throws SQLException {
         int validador = 0;
-        String sql = "SELECT COUNT(*) FROM usuario WHERE run =" + run;
-        if (con.ejecutarSelect(query).next()) {
+        String sql = "SELECT COUNT(*) FROM usuario WHERE run = '"+run+"'";
+        if (con.ejecutarSelect(sql).next()) {
             validador = con.rs.getInt(1);
         }
         con.close();
         return validador;
     }
     
-    public void getUsuarioSesion(int num, String run){
-        Usuario u;
+    public Usuario getUsuarioSesion(String run) throws SQLException{
+        Usuario u = new Usuario();
         
         String sql = "SELECT run,nombre,fk_tipoUsu FROM usuario WHERE run = "+run;
         
+        if (con.ejecutarSelect(sql).next()) {
+            u.setRun(con.rs.getString(1)) ;
+            u.setNombre(con.rs.getString(2));
+            u.setTipoUsuario(con.rs.getInt(3));
+        }
+        return u;
     }
 
     public void registrarUsuarioVendedor(Usuario nuevo) throws SQLException {
@@ -64,6 +70,14 @@ public class Data {
 
         con.ejecutar(query);
 
+    }
+    
+    public void registrarCliente(Cliente nuevo) throws SQLException{
+        query = ("INSERT INTO cliente Values('"+nuevo.getRun()+"',"
+                + "'"+nuevo.getNombre()+"',"
+                + "'"+nuevo.getSueldo()+"')");
+        
+        con.ejecutar(query);
     }
 
 }

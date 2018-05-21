@@ -93,6 +93,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Crear Cliente"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCrearClienteActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnCambiarAp">
           <Properties>
@@ -101,6 +104,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Cambiar Apariencia"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCambiarApActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnVender">
           <Properties>
@@ -109,6 +115,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="vender Vivienda"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVenderActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnArrendar">
           <Properties>

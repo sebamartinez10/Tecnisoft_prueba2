@@ -10,16 +10,16 @@ import model.Usuario;
 public class Inicio_sesion extends javax.swing.JFrame {
 
     private Data d;
-    public Usuario nombreUsuario;
-    public String runUsuario;
-    private Vendedor v;
-    private Admin a;
+    public Usuario usuarioSesion;
+    private String runUsuario;
+    private FormVendedor v;
+    private FormAdmin a;
 
     public Inicio_sesion() {
         try {
             d = new Data();
-            v = new Vendedor();
-            a = new Admin();
+            v = new FormVendedor();
+            a = new FormAdmin();
 
             initComponents();
             setLocationRelativeTo(null);
@@ -134,7 +134,29 @@ public class Inicio_sesion extends javax.swing.JFrame {
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
 
         try {
-            runUsuario = txtRun.getText();
+            if (!txtRun.getText().isEmpty()) {
+                runUsuario = txtRun.getText();
+                if (d.validarUsuario(runUsuario) == 1) {  
+                    usuarioSesion = d.getUsuarioSesion(runUsuario);
+                    switch(usuarioSesion.getTipoUsuario()){
+                        case 1:
+                            a.setVisible(true);
+                            break;
+                        case 2:
+                            v.setVisible(true);
+                    }
+                } else {
+                    String mensaje = "El usuario ingresado no existe.";
+                    String titulo = "Advertencia!";
+                    int tipoMensaje = JOptionPane.ERROR_MESSAGE;
+                    JOptionPane.showMessageDialog(this, mensaje, titulo, tipoMensaje);
+                }
+            } else {
+                String mensaje = "Debe ingresar un rut para ingresar.";
+                String titulo = "Advertencia!";
+                int tipoMensaje = JOptionPane.WARNING_MESSAGE;
+                JOptionPane.showMessageDialog(this, mensaje, titulo, tipoMensaje);
+            }
 
             // validar
             if (runUsuario.equals("")) {
@@ -142,13 +164,12 @@ public class Inicio_sesion extends javax.swing.JFrame {
                 txtRun.requestFocus();
             }
 
-            if (runUsuario.equals("11-1")) {
-                Usuario u = new Usuario(runUsuario);
-                 
-                d.registrarUsuarioAdmin(u);
-                a.setVisible(true);
-            }
-               
+//            if (runUsuario.equals("11-1")) {
+//                Usuario u = new Usuario(runUsuario);
+//
+//                d.registrarUsuarioAdmin(u);
+//                a.setVisible(true);
+//            }
 
         } catch (SQLException ex) {
             Logger.getLogger(Inicio_sesion.class.getName()).log(Level.SEVERE, null, ex);

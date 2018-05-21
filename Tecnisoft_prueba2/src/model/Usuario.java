@@ -4,6 +4,15 @@ public class Usuario {
 
     private String run;
     private String nombre;
+    private int tipoUsuario;
+
+    public int getTipoUsuario() {
+        return tipoUsuario;
+    }
+
+    public void setTipoUsuario(int tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
+    }
 
     public Usuario(String run, String nombre) {
         this.run = run;
@@ -36,6 +45,19 @@ public class Usuario {
     @Override
     public String toString() {
         return "Usuario{" + "run=" + run + ", nombre=" + nombre + '}';
+    }
+
+    public String getTipoString() {
+        String tipo = "";
+        switch (tipoUsuario) {
+            case 1:
+                tipo = "Administrador";
+                break;
+            case 2:
+                tipo = "Vendedor";
+                break;
+        }
+        return tipo;
     }
 
 }
